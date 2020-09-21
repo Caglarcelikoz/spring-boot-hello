@@ -16,9 +16,7 @@ pipeline {
 
                     steps {
 
-
-
-                       sh "ansible-playbook ansible/playbook.yml -i ansible/inventory-file --user jenkins --key-file ~/.ssh/caglar_test_key.pem"
+                       sh "ansible --version"
 
                     }
         }
