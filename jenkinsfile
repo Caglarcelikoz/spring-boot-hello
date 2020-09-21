@@ -15,8 +15,8 @@ pipeline {
         stage("Deploy ap to vm"){
              steps{
                 ansiblePlaybook(
-                                    inventory: 'ansible/inventory-file',
-                                    playbook: 'ansible/playbook.yml'
+                                    inventory: '/Users/caglar/Documents/spring-boot-hello/ansible/inventory-file',
+                                    playbook: '/Users/caglar/Documents/spring-boot-hello/ansible/playbook.yml'
                                 )
              }
         }
