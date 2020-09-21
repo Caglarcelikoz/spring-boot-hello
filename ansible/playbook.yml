@@ -12,4 +12,7 @@
         src: /Users/caglar/.jenkins/workspace/ing_boot_example_pipeline_master/target/spring-boot-test-rest-0.0.1-SNAPSHOT.jar
         dest: /
     - name: run jar file
-      shell: /usr/bin/java -Dserver.port=8888  -jar "/spring-boot-test-rest-0.0.1-SNAPSHOT.jar"
+      systemd:
+        name: /spring-boot-test-rest-0.0.1-SNAPSHOT.jar"
+        state: started
+        enabled: true
