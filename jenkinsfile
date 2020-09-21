@@ -12,14 +12,29 @@ pipeline {
                 sh "mvn clean install"
             }
         }
-        stage("Deploy ap to vm"){
-             steps{
-                ansiblePlaybook(
-                                    credentialsId:'/Users/caglar/.ssh/caglar_test_key.pem',
-                                    inventory: 'ansible/inventory-file',
-                                    playbook: 'ansible/playbook.yml'
-                                )
-             }
+         stage('Ansible Init') {
+                    steps {
+                        script {
+
+                       def tfHome = tool name: 'Ansible'
+                        env.PATH = "${tfHome}:${env.PATH}"
+                         sh 'ansible --version'
+
+                    }
+                    }
+                }
+
+
+
+                stage('Ansible Deploy') {
+
+                    steps {
+
+
+
+                       sh "ansible-playbook ansible/playbook.yml -i ansible/inventory-file --user jenkins --key-file ~/.ssh/caglar_test_key.pem"
+
+                    }
         }
     }
 }
