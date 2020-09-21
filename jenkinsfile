@@ -16,7 +16,7 @@ pipeline {
 
                     steps {
 
-                       sh "sudo ansible --version"
+                       sh "/usr/local/bin/ansible"
 
                     }
         }
