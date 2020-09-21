@@ -16,7 +16,7 @@ pipeline {
 
                     steps {
 
-                       sh "ansible --version"
+                       sh "java --version"
 
                     }
         }
