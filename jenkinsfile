@@ -16,7 +16,7 @@ pipeline {
 
                     steps {
 
-                       sh "/usr/local/bin/ansible"
+                       sh "/usr/local/bin/ansible --veraion"
 
                     }
         }
