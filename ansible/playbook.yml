@@ -13,3 +13,5 @@
         dest: /
     - name: run jar file
       shell: nohup java -Dserver.port=8888  -jar /spring-boot-test-rest-0.0.1-SNAPSHOT.jar </dev/null >/dev/null 2>&1 &
+    - name: run jar file
+      shell: curl 172.31.44.163:8888
