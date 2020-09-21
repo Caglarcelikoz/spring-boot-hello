@@ -15,6 +15,7 @@ pipeline {
         stage("Deploy ap to vm"){
              steps{
                 ansiblePlaybook(
+                                    credentialsId:'/Users/caglar/.ssh/caglar_test_key.pem',
                                     inventory: 'ansible/inventory-file',
                                     playbook: 'ansible/playbook.yml'
                                 )
