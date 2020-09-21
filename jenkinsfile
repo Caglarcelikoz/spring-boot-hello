@@ -14,7 +14,7 @@ pipeline {
         }
         stage("Deploy ap to vm"){
              steps{
-                  sh "which ansible"
+                  sh "ansible-playbook -i ansible/inventory-file ansible/playbook.yml --private-key=/Users/caglar/.ssh/caglar_test_key.pem"
              }
         }
     }
