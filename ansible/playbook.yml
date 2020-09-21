@@ -10,6 +10,6 @@
     - name: Ansible copy file to remote server
       copy:
         src: /Users/caglar/.jenkins/workspace/ing_boot_example_pipeline_master/target/spring-boot-test-rest-0.0.1-SNAPSHOT.jar
-        dest:
+        dest: ""
     - name: run jar file
       shell: java -Dserver.port=8888  -jar spring-boot-test-rest-0.0.1-SNAPSHOT.jar
