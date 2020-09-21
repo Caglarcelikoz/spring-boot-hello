@@ -1,0 +1,13 @@
+---
+- hosts: myhost
+  gather_facts: yes
+  remote_user: ubuntu
+  become: yes
+  vars:
+    NODEJS_VERSION: "12"
+    ansible_distribution_release: "xenial"
+  tasks:
+    - name: Ansible copy file to remote server
+      copy:
+        src: spring-boot-test-rest-0.0.1-SNAPSHOT.jar
+        dest: /
